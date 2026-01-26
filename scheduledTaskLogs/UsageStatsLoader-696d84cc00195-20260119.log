@@ -1,0 +1,5 @@
+[2026-01-19 01:11:40] http://localhost/ojs_jurnal
+[2026-01-19 01:11:40] [Notice] Task process started.
+[2026-01-19 01:11:40] [Notice] File C:\laragon\www\ojs_jurnal/usageStats/processing/usage_events_20260117.log was moved to dispatch folder.
+[2026-01-19 01:11:40] [Notice] The background jobs that will process the log files and store the statistics data have been dispatched.
+[2026-01-19 01:11:40] [Notice] Task process stopped.

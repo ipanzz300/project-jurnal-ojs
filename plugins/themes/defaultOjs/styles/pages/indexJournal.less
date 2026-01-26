@@ -1,0 +1,454 @@
+/**
+ * @file plugins/themes/default/styles/pages/indexJournal.less
+ * Custom Homepage: Standard Layout (No Overlap)
+ * [FIX]: Hapus Titik/Garis Biru di Kiri Card
+ */
+
+/* ========================================================
+   1. HERO BANNER STYLING
+   ======================================================== */
+.custom-hero-banner {
+  background-color: #0f172a !important;
+  /* background-image: url('URL_GAMBAR_BACKGROUND_DISINI'); background-size: cover; */
+
+  /* Padding dibuat normal */
+  padding: 100px 0 !important;
+
+  color: #ffffff !important;
+  margin-bottom: 0 !important;
+  position: relative !important;
+  z-index: 0 !important;
+}
+
+.ojs-hero-subtitle {
+  display: inline-block !important;
+  padding: 6px 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 50px !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  color: #60a5fa !important;
+  background: rgba(15, 23, 42, 0.5) !important;
+  margin-bottom: 20px !important;
+  letter-spacing: 0.5px !important;
+}
+
+.ojs-hero-title {
+  font-family: "Merriweather", serif !important;
+  font-size: 2.8rem !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  margin-bottom: 20px !important;
+  color: #ffffff !important;
+}
+
+.ojs-hero-tagline {
+  font-family: "Inter", sans-serif !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  color: #cbd5e1 !important;
+  max-width: 700px !important;
+  margin-bottom: 30px !important;
+}
+
+.ojs-hero-buttons {
+  display: flex !important;
+  gap: 15px !important;
+}
+
+.btn-main {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  border: 2px solid #0d6efd !important;
+}
+
+.btn-outline-hero {
+  background-color: transparent !important;
+  color: #fff !important;
+  padding: 10px 24px !important;
+  border-radius: 50px !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* ========================================================
+   2. MAIN CONTENT (Current Issue)
+   ======================================================== */
+.pkp_page_index {
+  .current_issue,
+  .additional_content {
+    display: block !important;
+    visibility: visible !important;
+
+    /* Card Style */
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
+    padding: 60px 70px !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
+    border: 1px solid rgba(13, 110, 253, 0.12) !important;
+
+    /* Posisi Tengah & Margin */
+    width: 95% !important;
+    max-width: 1100px !important;
+    margin: 50px auto 50px auto !important;
+
+    position: relative !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+
+    /* Animasi */
+    animation: fadeInContent 0.6s ease-out !important;
+    transition: all 0.4s ease !important;
+  }
+
+  /* [FIX] HAPUS TOTAL TITIK/GARIS BIRU DI KIRI */
+  .current_issue::before,
+  .additional_content::before {
+    display: none !important;
+    content: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+  }
+
+  /* Dekorasi Radial Gradient (Efek Cahaya di Kanan Atas - Tetap Ada Biar Manis) */
+  .current_issue::after,
+  .additional_content::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0;
+    right: 0;
+    width: 150px !important;
+    height: 150px !important;
+    background: radial-gradient(
+      circle at top right,
+      rgba(13, 110, 253, 0.05) 0%,
+      transparent 70%
+    ) !important;
+    pointer-events: none !important;
+  }
+
+  /* Hover Effect */
+  .current_issue:hover,
+  .additional_content:hover {
+    box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15) !important;
+    transform: translateY(-2px) !important;
+    border-color: rgba(13, 110, 253, 0.3) !important;
+  }
+
+  /* ========================================================
+     3. HEADER / JUDUL SECTION
+     ======================================================== */
+  .card-header-custom {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    margin-bottom: 30px !important;
+    padding-bottom: 20px !important;
+  }
+
+  .card-header-custom h2.section-title,
+  .current_issue h2 {
+    font-family: "Merriweather", serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+  }
+
+  .card-header-custom .icon-title {
+    width: 32px !important;
+    height: 32px !important;
+    color: #0d6efd !important;
+    stroke-width: 2.5 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .current_issue:hover .icon-title {
+    transform: scale(1.1) rotate(5deg) !important;
+    color: #0088cc !important;
+  }
+
+  /* Typography Text */
+  .description-text,
+  .additional_content {
+    font-family: "Inter", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+    color: #334155 !important;
+    text-align: justify !important;
+  }
+
+  .description-text p {
+    margin-bottom: 1.5rem !important;
+  }
+  .description-text p:first-of-type::first-letter,
+  .additional_content p:first-of-type::first-letter {
+    font-family: "Merriweather", serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    float: left !important;
+    line-height: 0.8 !important;
+    margin-right: 10px !important;
+    margin-top: 5px !important;
+    color: #0d6efd !important;
+  }
+
+  /* ========================================================
+     4. TOC WRAPPER (METODE FLOAT - STABIL)
+     ======================================================== */
+  .toc-wrapper .heading {
+    display: block !important;
+    position: relative !important;
+    margin-bottom: 50px !important;
+    width: 100% !important;
+    overflow: visible !important;
+  }
+
+  .toc-wrapper .heading::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .toc-wrapper .cover {
+    float: left !important;
+    width: 300px !important;
+    margin-right: 40px !important;
+    margin-bottom: 20px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    padding: 8px !important;
+  }
+
+  .toc-wrapper .cover img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px !important;
+  }
+
+  .toc-wrapper .current_issue_title {
+    margin-left: 340px !important;
+    font-family: "Merriweather", serif !important;
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    color: #1e3a8a !important;
+    margin-top: -5px !important;
+    margin-bottom: 15px !important;
+    line-height: 1.2 !important;
+    display: block !important;
+  }
+
+  .toc-wrapper .heading > .description {
+    margin-left: 340px !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    display: block !important;
+  }
+
+  .toc-wrapper .heading > .description p {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .toc-wrapper .heading .published {
+    margin-left: 3px !important;
+    margin-right: 10px !important;
+    margin-top: 20px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    width: fit-content !important;
+    background: #eff6ff !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #1e40af !important;
+    border: 1px solid #dbeafe !important;
+    position: relative !important;
+    z-index: 5 !important;
+  }
+
+  .toc-wrapper .heading .published::before {
+    content: "📅" !important;
+    margin-right: 6px !important;
+    color: #60a5fa !important;
+  }
+
+  .toc-wrapper .heading .pub_id {
+    margin-left: 340px !important;
+    display: block !important;
+    margin-top: 8px !important;
+  }
+
+  /* ========================================================
+     5. CONTAINER ARTIKEL
+     ======================================================== */
+  .toc-wrapper .sections {
+    display: block !important;
+  }
+
+  .toc-wrapper .sections .section h2,
+  .toc-wrapper .sections .section h3 {
+    background-color: #ffffff !important;
+    border-radius: 20px 20px 0 0 !important;
+    margin-top: 20px !important;
+    margin-bottom: 0 !important;
+    padding: 25px 30px 10px 30px !important;
+    font-family: "Merriweather", serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    line-height: 1.3 !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .toc-wrapper .sections .section h2::after,
+  .toc-wrapper .sections .section h3::after {
+    content: "";
+    display: block !important;
+    width: 60px !important;
+    height: 5px !important;
+    margin-top: 8px !important;
+    border-radius: 10px !important;
+  }
+
+  .toc-wrapper .sections .section .articles {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+    padding: 0 !important;
+    list-style: none !important;
+    clear: both !important;
+  }
+
+  .obj_article_summary {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
+    border-left: 5px solid #0d6efd !important;
+    border-top: 1px solid #e2e8f0 !important;
+    border-right: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 1.5rem !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .obj_article_summary:hover {
+    transform: translateX(5px) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%) !important;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.12) !important;
+  }
+
+  .obj_article_summary .title a {
+    font-family: "Merriweather", serif !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    color: #111827 !important;
+    text-decoration: none !important;
+  }
+
+  .obj_article_summary .cover {
+    display: none !important;
+  }
+
+  /* Badge NEW */
+  .badge-new {
+    position: absolute !important;
+    top: 60px !important;
+    right: 70px !important;
+    background-image: linear-gradient(
+      90deg,
+      #ff0000,
+      #ff9a00,
+      #d600ff,
+      #ff0000
+    ) !important;
+    background-size: 300% 100% !important;
+    animation: flowGradient 3s linear infinite !important;
+    color: #ffffff !important;
+    padding: 6px 16px !important;
+    border-radius: 50px !important;
+    font-size: 0.75rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    z-index: 10 !important;
+  }
+
+  @keyframes fadeInContent {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes flowGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* ========================================================
+     6. RESPONSIVE (HP)
+     ======================================================== */
+  @media (max-width: 768px) {
+    .current_issue,
+    .additional_content {
+      padding: 30px 25px !important;
+    }
+
+    .toc-wrapper .heading {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
+    .toc-wrapper .cover {
+      float: none !important;
+      margin: 0 auto 20px auto !important;
+      max-width: 250px !important;
+    }
+
+    .toc-wrapper .current_issue_title,
+    .toc-wrapper .heading > .description,
+    .toc-wrapper .heading .published,
+    .toc-wrapper .heading .pub_id {
+      margin-left: 0 !important;
+      text-align: center !important;
+      justify-content: center !important;
+    }
+
+    .toc-wrapper .heading .published {
+      margin-top: 10px !important;
+    }
+
+    .badge-new {
+      position: static !important;
+      display: inline-block !important;
+      margin-top: 10px !important;
+    }
+  }
+}

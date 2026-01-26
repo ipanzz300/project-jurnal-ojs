@@ -1,0 +1,216 @@
+.page_issue_archive .cmp_breadcrumbs {
+  margin-bottom: 1.5rem !important;
+  padding-bottom: 1rem !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  font-size: 0.9rem !important;
+  display: block !important;
+  text-align: left !important;
+  padding-left: 20px !important;
+  width: 100% !important;
+}
+
+/* JUDUL HALAMAN (ARCHIVES) */
+body .pkp_structure_main .page_issue_archive h1 {
+  font-family: "Merriweather", serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-top: 30px !important;
+  margin-bottom: 40px !important;
+  text-align: left !important;
+  display: block !important;
+  width: 100% !important;
+  border: none !important;
+}
+
+body .pkp_structure_main .page_issue_archive h1::after {
+  content: none !important;
+  display: none !important;
+}
+
+.page_issue_archive h1::after {
+  content: "" !important;
+  display: block !important;
+  width: 70px !important;
+  height: 6px !important;
+  margin-top: 12px !important;
+  border-radius: 20px !important;
+  margin-left: 20px !important;
+}
+
+/* 2. GRID ARCHIVE (Layout Kotak-Kotak) */
+.issues_archive {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 30px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+/* 3. STYLE KARTU ARCHIVE */
+.issues_archive li .obj_issue_summary {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-left: 5px solid #0d6efd !important;
+  border-radius: 12px !important;
+  padding: 25px !important;
+  height: 95% !important;
+  margin-left: 10px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Hover Effect */
+.issues_archive li .obj_issue_summary:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 15px 30px rgba(13, 110, 253, 0.15) !important;
+  border-left-color: #00d4ff !important;
+}
+
+/* 4. [FIX FINAL] GAMBAR COVER UTUH & RAPI (Background Putih) */
+.issues_archive .cover {
+  display: block !important;
+  width: 100% !important;
+  height: 320px !important;
+
+  margin-bottom: 20px !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: none !important;
+  background: #ffffff !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+}
+
+.issues_archive .obj_issue_summary .cover img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  transition: transform 0.5s ease !important;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) !important;
+}
+
+/* Efek Hover: Zoom Dikit */
+.issues_archive li .obj_issue_summary:hover .cover img {
+  transform: scale(1.05) !important;
+}
+
+/* 5. TYPOGRAPHY KARTU */
+.issues_archive h2,
+.issues_archive .series {
+  font-family: "Merriweather", serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.4 !important;
+}
+
+.issues_archive h2 a,
+.issues_archive .series a {
+  color: #1e293b !important;
+  text-decoration: none !important;
+}
+
+.issues_archive li .obj_issue_summary:hover h2 a {
+  color: #0d6efd !important;
+}
+
+.issues_archive .description {
+  font-family: "Inter", sans-serif !important;
+  font-size: 0.9rem !important;
+  color: #64748b !important;
+  margin-bottom: 15px !important;
+  line-height: 1.6 !important;
+  display: -webkit-box !important;
+  -webkit-line-clamp: 3 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  height: auto !important;
+  max-height: none !important;
+  padding-bottom: 4px !important;
+}
+
+.issues_archive .description p {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: inherit !important;
+}
+
+/* Tanggal Terbit */
+.issues_archive .published {
+  margin-top: auto !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: #94a3b8 !important;
+  text-transform: uppercase !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.issues_archive .published::before {
+  content: "📅" !important;
+}
+
+/* PAGINATION */
+.cmp_pagination {
+  margin-top: 40px !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+.cmp_pagination .href,
+.cmp_pagination .current {
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  font-weight: 600 !important;
+}
+.cmp_pagination .href {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  color: #0d6efd;
+  text-decoration: none;
+}
+.cmp_pagination .current {
+  background: #0d6efd;
+  color: #fff;
+}
+
+/* RESPONSIF HP */
+@media (max-width: 768px) {
+  .page_issue_archive h1 {
+    text-align: center !important;
+  }
+  .page_issue_archive h1::after {
+    margin: 12px auto 0 auto !important;
+  }
+}
+
+/* STYLE TAMBAHAN DARI MAS IVAN */
+.obj_issue_toc .current_issue_details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.obj_issue_toc .description {
+  margin-bottom: 5px;
+}
+
+.obj_issue_toc .published {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  display: inline-block;
+}
