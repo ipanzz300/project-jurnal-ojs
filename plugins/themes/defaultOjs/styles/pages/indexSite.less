@@ -1,4 +1,3 @@
-/* --- ABOUT PAGE --- */
 .page_about {
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
   padding: 60px 70px !important;
@@ -12,10 +11,12 @@
   transition: all 0.4s ease !important;
   animation: fadeInContent 0.6s ease-out !important;
 }
+
 .page_about:hover {
   box-shadow: 0 15px 60px rgba(13, 110, 253, 0.12) !important;
   transform: translateY(-3px) !important;
 }
+
 .page_about::before {
   content: "" !important;
   position: absolute !important;
@@ -27,6 +28,7 @@
   background-size: 100% 200% !important;
   animation: flowVertical 3s ease-in-out infinite !important;
 }
+
 @keyframes flowVertical {
   0%,
   100% {
@@ -36,6 +38,7 @@
     background-position: 0% 100%;
   }
 }
+
 .page_about::after {
   content: "" !important;
   position: absolute !important;
@@ -50,12 +53,14 @@
   ) !important;
   pointer-events: none !important;
 }
+
 .page_about .cmp_breadcrumbs {
   margin-bottom: 1.5rem !important;
   padding-bottom: 1rem !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
   font-size: 0.9rem !important;
 }
+
 .page_about h1 {
   font-family: "Merriweather", serif !important;
   font-size: 2.5rem !important;
@@ -69,11 +74,13 @@
   align-items: center !important;
   gap: 15px !important;
 }
+
 .page_about h1::before {
   content: "ℹ️" !important;
   font-size: 2.2rem !important;
   display: inline-block !important;
 }
+
 .page_about h1::after {
   content: "" !important;
   display: block !important;
@@ -85,6 +92,7 @@
   border-radius: 10px !important;
   animation: expandWidth 1s ease-out !important;
 }
+
 @keyframes expandWidth {
   from {
     width: 0;
@@ -95,6 +103,7 @@
     opacity: 1;
   }
 }
+
 .page_about p {
   font-family: "Inter", sans-serif !important;
   font-size: 1.05rem !important;
@@ -105,9 +114,11 @@
   text-justify: inter-word !important;
   transition: color 0.3s ease !important;
 }
+
 .page_about p:hover {
   color: #1e293b !important;
 }
+
 .page_about p:first-of-type::first-letter {
   font-family: "Merriweather", serif !important;
   font-size: 4rem !important;
@@ -119,6 +130,7 @@
   margin-top: 8px !important;
   text-shadow: 2px 2px 4px rgba(13, 110, 253, 0.2) !important;
 }
+
 .page_about h2 {
   font-family: "Merriweather", serif !important;
   font-size: 1.85rem !important;
@@ -133,16 +145,19 @@
   align-items: center !important;
   gap: 12px !important;
 }
+
 .page_about h2::before {
   content: "📌" !important;
   font-size: 1.5rem !important;
   filter: grayscale(30%) !important;
   transition: all 0.3s ease !important;
 }
+
 .page_about h2:hover::before {
   filter: grayscale(0%) !important;
   transform: scale(1.15) rotate(5deg) !important;
 }
+
 .page_about h2::after {
   content: "" !important;
   position: absolute !important;
@@ -153,6 +168,7 @@
   background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
   border-radius: 10px !important;
 }
+
 .page_about h3 {
   font-family: "Merriweather", serif !important;
   font-size: 1.45rem !important;
@@ -163,14 +179,17 @@
   padding-left: 15px !important;
   border-left: 4px solid #0d6efd !important;
 }
+
 .page_about ul,
 .page_about ol {
   margin-bottom: 2rem !important;
   padding-left: 30px !important;
 }
+
 .page_about ul {
   list-style: none !important;
 }
+
 .page_about ul li {
   position: relative !important;
   padding-left: 30px !important;
@@ -181,6 +200,7 @@
   line-height: 1.75 !important;
   transition: all 0.3s ease !important;
 }
+
 .page_about ul li::before {
   content: "▶" !important;
   position: absolute !important;
@@ -190,14 +210,17 @@
   font-size: 0.75rem !important;
   transition: all 0.3s ease !important;
 }
+
 .page_about ul li:hover {
   color: #0d6efd !important;
   transform: translateX(5px) !important;
 }
+
 .page_about ul li:hover::before {
   transform: scale(1.3) !important;
   color: #00d4ff !important;
 }
+
 .page_about ol li {
   margin-bottom: 12px !important;
   font-family: "Inter", sans-serif !important;
@@ -206,10 +229,12 @@
   line-height: 1.75 !important;
   padding-left: 8px !important;
 }
+
 .page_about ol li::marker {
   color: #0d6efd !important;
   font-weight: 700 !important;
 }
+
 .page_about a {
   color: #0d6efd !important;
   text-decoration: none !important;
@@ -218,6 +243,7 @@
   transition: all 0.3s ease !important;
   border-bottom: 1px solid transparent !important;
 }
+
 .page_about a::after {
   content: "" !important;
   position: absolute !important;
@@ -228,12 +254,15 @@
   background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
   transition: width 0.3s ease !important;
 }
+
 .page_about a:hover {
   color: #0088cc !important;
 }
+
 .page_about a:hover::after {
   width: 100% !important;
 }
+
 .page_about .pkp_edit_link {
   display: inline-flex !important;
   align-items: center !important;
@@ -251,10 +280,12 @@
   transition: all 0.3s ease !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
 }
+
 .page_about .pkp_edit_link::before {
   content: "✏️" !important;
   font-size: 1rem !important;
 }
+
 .page_about .pkp_edit_link:hover {
   background: linear-gradient(135deg, #0d6efd, #0088cc) !important;
   color: #ffffff !important;
@@ -262,6 +293,7 @@
   transform: translateY(-2px) !important;
   box-shadow: 0 6px 15px rgba(13, 110, 253, 0.25) !important;
 }
+
 .page_about blockquote {
   background: linear-gradient(135deg, #f0f9ff, #e0f2fe) !important;
   border-left: 5px solid #0d6efd !important;
@@ -274,6 +306,7 @@
   position: relative !important;
   box-shadow: 0 4px 15px rgba(13, 110, 253, 0.08) !important;
 }
+
 .page_about blockquote::before {
   content: "\201C" !important;
   position: absolute !important;
@@ -284,6 +317,7 @@
   font-family: Georgia, serif !important;
   line-height: 1 !important;
 }
+
 .page_about table {
   width: 100% !important;
   border-collapse: collapse !important;
@@ -292,6 +326,7 @@
   overflow: hidden !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
+
 .page_about table th {
   background: linear-gradient(135deg, #0d6efd, #0088cc) !important;
   color: #ffffff !important;
@@ -301,19 +336,23 @@
   text-align: left !important;
   font-size: 0.95rem !important;
 }
+
 .page_about table td {
   padding: 12px 15px !important;
   border-bottom: 1px solid #e2e8f0 !important;
   font-family: "Inter", sans-serif !important;
   color: #334155 !important;
 }
+
 .page_about table tr:hover td {
   background: #f8fbff !important;
 }
+
 .page_about strong {
   color: #1e293b !important;
   font-weight: 700 !important;
 }
+
 .page_about em {
   color: #475569 !important;
   font-style: italic !important;
@@ -369,6 +408,7 @@
     padding: 10px 8px !important;
   }
 }
+
 @media print {
   .page_about {
     box-shadow: none !important;
@@ -382,13 +422,10 @@
   }
 }
 
-/* --- SUBMISSIONS PAGE --- */
 .page_submissions {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-
-  /* Gaya Kartu */
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
   padding: 60px 70px !important;
   border-radius: 20px !important;
@@ -410,7 +447,6 @@
   border-color: rgba(13, 110, 253, 0.3) !important;
 }
 
-/* 2. HIASAN GARIS BIRU (KIRI) */
 .page_submissions::before {
   content: "" !important;
   position: absolute !important;
@@ -421,7 +457,6 @@
   background: linear-gradient(180deg, #0d6efd, #00d4ff) !important;
 }
 
-/* 3. DEKORASI (KANAN ATAS) */
 .page_submissions::after {
   content: "" !important;
   position: absolute !important;
@@ -437,7 +472,6 @@
   pointer-events: none !important;
 }
 
-/* 4. JUDUL UTAMA (Submissions) */
 .page_submissions h1 {
   font-family: "Merriweather", serif !important;
   font-size: 2.5rem !important;
@@ -460,7 +494,6 @@
   border-radius: 10px !important;
 }
 
-/* 5. SUB-JUDUL (Author Guidelines, Privacy, dll) */
 .page_submissions h2 {
   font-family: "Merriweather", serif !important;
   font-size: 1.6rem !important;
@@ -473,7 +506,6 @@
   position: relative !important;
 }
 
-/* 6. ISI TEKS / PARAGRAF */
 .page_submissions p,
 .page_submissions .author_guidelines,
 .page_submissions .copyright_notice,
@@ -486,7 +518,6 @@
   margin-bottom: 15px !important;
 }
 
-/* 7. KOTAK NOTIFIKASI LOGIN/REGISTER */
 .cmp_notification {
   background: #eff6ff !important;
   border: 1px solid #bfdbfe !important;
@@ -504,11 +535,11 @@
   text-decoration: none !important;
   border-bottom: 1px solid transparent !important;
 }
+
 .cmp_notification a:hover {
   border-bottom-color: #0d6efd !important;
 }
 
-/* 8. CHECKLIST SUBMISSION (Rapi) */
 .submission_checklist ul {
   list-style: none !important;
   padding: 0 !important;
@@ -531,7 +562,6 @@
   transform: translateX(5px) !important;
 }
 
-/* Ikon Centang Checklist */
 .submission_checklist li::before {
   content: "✔" !important;
   position: absolute !important;
@@ -549,7 +579,6 @@
   font-size: 0.8rem !important;
 }
 
-/* RESPONSIVE HP */
 @media (max-width: 768px) {
   .page_submissions {
     padding: 30px 20px !important;
@@ -558,45 +587,25 @@
   }
 }
 
-/* --- EDITORIAL TEAM --- */
-/* --- EDITORIAL TEAM PAGE (FULL UPDATE) --- */
-
-/* 1. CONTAINER UTAMA */
-/* --- EDITORIAL TEAM PAGE (FULL UPDATE) --- */
-
-/* 1. CONTAINER UTAMA */
-/* 1. CONTAINER UTAMA EDITORIAL TEAM (DENGAN ANIMASI HOVER) */
 .page_editorial_team {
   background: #ffffff !important;
   padding: 50px 60px !important;
   border-radius: 20px !important;
-
-  /* Style Shadow & Border Biru Tipis */
   box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
   border: 1px solid rgba(13, 110, 253, 0.12) !important;
-
   max-width: 1000px !important;
   margin: 50px auto !important;
   position: relative !important;
   overflow: hidden !important;
-
-  /* [BARU] Transisi Halus untuk Efek Gerak */
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
 }
 
-/* [BARU] EFEK SAAT KURSOR DIARAHKAN KE CARD (Gerak Naik Tipis) */
 .page_editorial_team:hover {
-  transform: translateY(-3px) !important; /* Naik ke atas 7px */
-  box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15) !important; /* Bayangan makin lembut & dalam */
-  border-color: rgba(
-    13,
-    110,
-    253,
-    0.3
-  ) !important; /* Border sedikit lebih tegas */
+  transform: translateY(-3px) !important;
+  box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15) !important;
+  border-color: rgba(13, 110, 253, 0.3) !important;
 }
 
-/* 2. GARIS SAMPING KIRI (MIRIP SUBMISSIONS) */
 .page_editorial_team::before {
   content: "" !important;
   position: absolute !important;
@@ -609,7 +618,6 @@
   z-index: 1 !important;
 }
 
-/* 3. JUDUL UTAMA (TANPA GARIS BAWAH RGB) */
 .page_editorial_team h1 {
   font-family: "Merriweather", serif !important;
   font-size: 2.5rem !important;
@@ -618,41 +626,32 @@
   margin-top: 0 !important;
   margin-bottom: 35px !important;
   padding-bottom: 20px !important;
-
-  /* Garis pemisah tipis abu-abu tetap ada agar rapi */
   border-bottom: 2px solid #e2e8f0 !important;
   position: relative !important;
 }
 
-/* MENGHAPUS GARIS RGB DI BAWAH JUDUL */
 .page_editorial_team h1::after {
   content: none !important;
   display: none !important;
 }
 
-/* 4. SUB-JUDUL (Editor in Chief, dll) */
 .page_editorial_team h2,
 .page_editorial_team h3 {
   font-family: "Merriweather", serif !important;
   font-size: 1.6rem !important;
   font-weight: 800 !important;
   color: #1e3a8a !important;
-
   margin-top: 40px !important;
   margin-bottom: 20px !important;
-
-  /* Style kotak background dihapus agar lebih bersih, ganti garis bawah putus-putus */
   background: transparent !important;
   padding: 0 0 10px 0 !important;
   border-radius: 0 !important;
   border-left: none !important;
   border-bottom: 1px dashed #cbd5e1 !important;
-
   display: block !important;
   width: 100% !important;
 }
 
-/* 5. LIST ANGGOTA TIM */
 .page_editorial_team ul {
   list-style: none !important;
   padding: 0 !important;
@@ -663,10 +662,8 @@
   position: relative !important;
   padding: 15px 20px 15px 55px !important;
   margin-bottom: 10px !important;
-
   background: #ffffff !important;
   border-radius: 8px !important;
-
   font-family: "Inter", sans-serif !important;
   font-size: 1rem !important;
   color: #334155 !important;
@@ -674,7 +671,6 @@
   transition: all 0.3s ease !important;
 }
 
-/* Hover Effect pada List */
 .page_editorial_team li:hover {
   border-color: #0d6efd !important;
   background: #f8fafc !important;
@@ -682,14 +678,12 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
-/* Ikon Orang di Kiri Nama */
 .page_editorial_team li::before {
   content: "👨‍💻" !important;
   position: absolute !important;
   left: 15px !important;
   top: 50% !important;
   transform: translateY(-50%) !important;
-
   font-size: 1.2rem !important;
   background: #eff6ff !important;
   width: 32px !important;
@@ -707,7 +701,6 @@
   background: #dbeafe !important;
 }
 
-/* Link Nama/Afiliasi */
 .page_editorial_team a {
   color: #0d6efd !important;
   text-decoration: none !important;
@@ -720,7 +713,6 @@
   border-bottom-color: #0d6efd !important;
 }
 
-/* Paragraf Deskripsi (jika ada) */
 .page_editorial_team p {
   font-family: "Inter", sans-serif !important;
   line-height: 1.8 !important;
@@ -729,7 +721,6 @@
   text-align: justify !important;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .page_editorial_team {
     padding: 30px 25px !important;
@@ -739,7 +730,6 @@
   }
 }
 
-/* --- PRIVACY & INFORMATION PAGES --- */
 .page_privacy,
 .page_information {
   display: block !important;
@@ -756,12 +746,14 @@
   animation: fadeInContent 0.6s ease-out !important;
   transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
 }
+
 .page_privacy:hover,
 .page_information:hover {
   box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15) !important;
   transform: translateY(-2px) !important;
   border-color: rgba(13, 110, 253, 0.3) !important;
 }
+
 .page_privacy::before,
 .page_information::before {
   content: "" !important;
@@ -772,6 +764,7 @@
   height: 100% !important;
   background: linear-gradient(180deg, #0d6efd, #00d4ff) !important;
 }
+
 .page_privacy::after,
 .page_information::after {
   content: "" !important;
@@ -787,6 +780,7 @@
   ) !important;
   pointer-events: none !important;
 }
+
 .page_privacy h1,
 .page_information h1 {
   font-family: "Merriweather", serif !important;
@@ -798,6 +792,7 @@
   position: relative !important;
   border-bottom: 2px solid #e2e8f0 !important;
 }
+
 .page_privacy h1::after,
 .page_information h1::after {
   content: "" !important;
@@ -810,6 +805,7 @@
   border-radius: 10px !important;
   animation: expandWidth 1s ease-out !important;
 }
+
 .page_privacy p,
 .page_information .description {
   font-family: "Inter", sans-serif !important;
@@ -819,6 +815,7 @@
   text-align: justify !important;
   margin-bottom: 1.5rem !important;
 }
+
 .page_privacy p:first-of-type::first-letter {
   font-family: "Merriweather", serif !important;
   font-size: 3.5rem !important;
@@ -829,6 +826,7 @@
   margin-top: 5px !important;
   color: #0d6efd !important;
 }
+
 .page_information .description a {
   color: #0d6efd !important;
   text-decoration: none !important;
@@ -836,10 +834,12 @@
   border-bottom: 1px solid transparent !important;
   transition: all 0.2s ease !important;
 }
+
 .page_information .description a:hover {
   color: #0044cc !important;
   border-bottom-color: #0d6efd !important;
 }
+
 .page_information .pkp_edit_link {
   display: inline-block !important;
   margin-bottom: 20px !important;
@@ -852,10 +852,12 @@
   text-decoration: none !important;
   transition: all 0.2s ease !important;
 }
+
 .page_information .pkp_edit_link:hover {
   background: #e2e8f0 !important;
   color: #0f172a !important;
 }
+
 @media (max-width: 768px) {
   .page_privacy,
   .page_information {
@@ -869,7 +871,6 @@
   }
 }
 
-/* --- ARTICLE DETAIL PAGE --- */
 .page_article {
   display: block !important;
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
@@ -884,12 +885,15 @@
   overflow: hidden !important;
   animation: fadeInContent 0.6s ease-out !important;
   transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  color: #334155 !important;
 }
+
 .page_article:hover {
   box-shadow: 0 20px 60px rgba(13, 110, 253, 0.15) !important;
   transform: translateY(-2px) !important;
   border-color: rgba(13, 110, 253, 0.3) !important;
 }
+
 .page_article::before {
   content: "" !important;
   position: absolute !important;
@@ -899,6 +903,7 @@
   height: 100% !important;
   background: linear-gradient(180deg, #0d6efd, #00d4ff) !important;
 }
+
 .page_article::after {
   content: "" !important;
   position: absolute !important;
@@ -913,6 +918,7 @@
   ) !important;
   pointer-events: none !important;
 }
+
 .page_article h1.page_title {
   font-family: "Merriweather", serif !important;
   font-size: 2.2rem !important;
@@ -924,17 +930,18 @@
   border-bottom: 2px solid #e2e8f0 !important;
   line-height: 1.3 !important;
 }
+
 .page_article h1.page_title::after {
   content: "" !important;
   display: block !important;
   width: 100px !important;
   height: 4px !important;
-  background: linear-gradient(90deg, #0d6efd, #00d4ff) !important;
   position: absolute;
   bottom: -2px !important;
   left: 0 !important;
   border-radius: 10px !important;
 }
+
 .page_article .cover_image img {
   border-radius: 16px !important;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
@@ -945,15 +952,18 @@
   display: block !important;
   transition: transform 0.4s ease !important;
 }
+
 .page_article .cover_image img:hover {
   transform: scale(1.02) !important;
 }
+
 .page_article .authors {
   margin-bottom: 30px !important;
   font-family: "Inter", sans-serif !important;
   color: #475569 !important;
   font-weight: 500 !important;
 }
+
 .page_article .galleys .obj_galley_link {
   background: #eff6ff !important;
   color: #0d6efd !important;
@@ -967,15 +977,18 @@
   margin-right: 10px !important;
   margin-bottom: 20px !important;
 }
+
 .page_article .galleys .obj_galley_link:hover {
   background: #0d6efd !important;
   color: #ffffff !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3) !important;
 }
+
 .page_article .galleys .obj_galley_link::before {
   content: "📄 " !important;
 }
+
 .page_article .item.abstract h3 {
   font-family: "Merriweather", serif !important;
   font-size: 1.4rem !important;
@@ -985,6 +998,7 @@
   margin-bottom: 15px !important;
   margin-top: 20px !important;
 }
+
 .page_article .item.abstract p {
   font-family: "Inter", sans-serif !important;
   line-height: 1.8 !important;

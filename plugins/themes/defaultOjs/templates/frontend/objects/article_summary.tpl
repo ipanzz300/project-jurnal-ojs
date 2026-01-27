@@ -59,9 +59,7 @@
 		</div>
 	{/if}
 
-	{* ================================================================== *}
-	{* 4. BARIS STATISTIK (Hanya Halaman & Abstract Views) *}
-	{* ================================================================== *}
+
 	<div class="meta-row" style="display: flex; align-items: center; gap: 15px; margin-top: 10px; margin-bottom: 15px; font-size: 0.85rem; color: #64748b;">
 		
 		{* A. Halaman (Pages) *}
@@ -107,7 +105,7 @@
 					<span class="galley-views" style="font-size: 0.75rem; color: #666; margin-left: 5px;">
 						<span class="fa fa-download"></span> {$galley->getViews()|default:0}
 					</span>
-					{* ------------------------------------------ *}
+					
 
 				</li>
 			{/foreach}

@@ -9,7 +9,7 @@
   width: 100% !important;
 }
 
-/* JUDUL HALAMAN (ARCHIVES) */
+// judul halaman archives
 body .pkp_structure_main .page_issue_archive h1 {
   font-family: "Merriweather", serif !important;
   font-size: 20px !important;
@@ -40,7 +40,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   margin-left: 20px !important;
 }
 
-/* 2. GRID ARCHIVE (Layout Kotak-Kotak) */
+// grid archives
 .issues_archive {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
@@ -50,7 +50,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   list-style: none !important;
 }
 
-/* 3. STYLE KARTU ARCHIVE */
+// style kartu archives
 .issues_archive li .obj_issue_summary {
   background: #ffffff !important;
   border: 1px solid #e2e8f0 !important;
@@ -67,14 +67,14 @@ body .pkp_structure_main .page_issue_archive h1::after {
   overflow: hidden !important;
 }
 
-/* Hover Effect */
+// efek hover
 .issues_archive li .obj_issue_summary:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 15px 30px rgba(13, 110, 253, 0.15) !important;
   border-left-color: #00d4ff !important;
 }
 
-/* 4. [FIX FINAL] GAMBAR COVER UTUH & RAPI (Background Putih) */
+
 .issues_archive .cover {
   display: block !important;
   width: 100% !important;
@@ -100,12 +100,12 @@ body .pkp_structure_main .page_issue_archive h1::after {
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1)) !important;
 }
 
-/* Efek Hover: Zoom Dikit */
+
 .issues_archive li .obj_issue_summary:hover .cover img {
   transform: scale(1.05) !important;
 }
 
-/* 5. TYPOGRAPHY KARTU */
+// typography kartu
 .issues_archive h2,
 .issues_archive .series {
   font-family: "Merriweather", serif !important;
@@ -148,7 +148,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   line-height: inherit !important;
 }
 
-/* Tanggal Terbit */
+
 .issues_archive .published {
   margin-top: auto !important;
   font-size: 0.8rem !important;
@@ -164,7 +164,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   content: "📅" !important;
 }
 
-/* PAGINATION */
+
 .cmp_pagination {
   margin-top: 40px !important;
   display: flex !important;
@@ -188,7 +188,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   color: #fff;
 }
 
-/* RESPONSIF HP */
+
 @media (max-width: 768px) {
   .page_issue_archive h1 {
     text-align: center !important;
@@ -198,7 +198,6 @@ body .pkp_structure_main .page_issue_archive h1::after {
   }
 }
 
-/* STYLE TAMBAHAN DARI MAS IVAN */
 .obj_issue_toc .current_issue_details {
   display: flex;
   flex-direction: column;

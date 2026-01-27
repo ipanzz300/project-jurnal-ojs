@@ -3,23 +3,22 @@
 <div class="page_index_journal">
     {call_hook name="Templates::Index::journal"}
 
-    {* === HERO SECTION (Teks Manual/Hardcode biar Rapi) === *}
-    {* === HERO SECTION (DINAMIS: Ambil Data dari Dashboard) === *}
+  
     <section class="custom-hero-banner ojs-hero-wrapper">
         <div class="container">
             <div class="hero-inner">
 
-                {* 1. SUBTITLE: Tetap statis atau bisa pakai Translate Key *}
+                
                 <span class="hero-subtitle ojs-hero-subtitle">
                     Open Access Journal
                 </span>
 
-                {* 2. JUDUL: Ambil Nama Jurnal (Dinamis) *}
+                
                 <h1 class="hero-title ojs-hero-title">
                     {$currentJournal->getLocalizedName()|escape}
                 </h1>
 
-                {* 3. TAGLINE: Ambil dari JOURNAL SUMMARY (Dinamis) *}
+                
                 {* strip_tags = Menghapus format bold/enter dari editor admin biar teksnya rapi *}
                 <div class="hero-tagline ojs-hero-tagline">
                     {$currentJournal->getLocalizedDescription()|strip_tags}
@@ -45,7 +44,7 @@
             {* Bagian Kiri: HANYA CURRENT ISSUE *}
             <main class="col-lg-8 col-md-12 ojs-main-content">
 
-                {* Card About SUDAH DIHAPUS sesuai request *}
+                
 
                 {if $issue}
                 <section class="current_issue content-card ojs-issue-card" id="homepageIssue">
@@ -71,7 +70,7 @@
 
             </main>
 
-            {* Bagian Kanan: SIDEBAR (Tetap Ada) *}
+            
             <aside class="col-lg-4 col-md-12 ojs-sidebar">
                 <div class="custom-sidebar">
                     {call_hook name="Templates::Common::Sidebar"}

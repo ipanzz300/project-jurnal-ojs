@@ -9,18 +9,12 @@
  *
  */
 
-// =========================================================
-// 1. OJS CORE IMPORTS
-// =========================================================
 @import "../../../../lib/pkp/styles/fontawesome.less";
 @import "../../../../lib/pkp/styles/normalize.less";
 @import "../../../../lib/pkp/styles/variables.less";
 @import "../../../../lib/pkp/styles/utils.less";
 @import "../../../../lib/pkp/styles/helpers.less";
 
-// =========================================================
-// 2. THEME IMPORTS (Urutan Jangan Diubah)
-// =========================================================
 @import "variables.less";
 @import "components.less";
 @import "body.less";
@@ -50,30 +44,19 @@
 @import "footer.less";
 @import "rtl.less";
 
-// =========================================================
-// 3. GLOBAL FIXES
-// =========================================================
 html,
 body {
-  overflow-x: hidden !important; /* Mencegah geser kanan-kiri yang tidak perlu */
+  overflow-x: hidden !important;
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
 }
 
-// =========================================================
-// 4. MOBILE RESPONSIVE FIX (SWIPEABLE MENU)
-//    Mode: Menu muncul langsung & bisa digeser (Scroll Samping)
-// =========================================================
-
 @media (max-width: 768px) {
-  /* A. HILANGKAN TOMBOL HAMBURGER (KITA GAK BUTUH LAGI) */
   .pkp_site_nav_toggle {
     display: none !important;
   }
 
-  /* B. MUNCULKAN TOP BAR (LOGIN/REGISTER) */
-  /* Ini agar user tetap bisa login/register dengan mudah */
   body .top-simple-bar {
     display: flex !important;
     justify-content: center !important;
@@ -88,74 +71,64 @@ body {
     color: #fff !important;
   }
 
-  /* C. WADAH MENU UTAMA */
-  /* Paksa menu selalu muncul (tidak disembunyikan OJS) */
   .pkp_site_nav_menu {
     display: block !important;
     background: #ffffff !important;
-    padding: 10px 0 15px 0 !important; /* Jarak atas bawah */
+    padding: 10px 0 15px 0 !important;
     border-bottom: 1px solid #f1f5f9 !important;
     width: 100% !important;
-    overflow: hidden !important; /* Biar scrollnya diurus anak elemennya */
+    overflow: hidden !important;
   }
 
-  /* Sembunyikan Search & User Nav Bawaan di area menu (karena sudah ada di Top Bar) */
   .pkp_nav_list_container .pkp_navigation_user,
   .pkp_nav_list_container .pkp_search {
     display: none !important;
   }
 
-  /* D. LIST MENU JADI HORIZONTAL SCROLL (GESER) */
   .pkp_navigation_primary {
     display: flex !important;
-    flex-direction: row !important; /* Berjejer ke samping */
-    flex-wrap: nowrap !important; /* DILARANG TURUN KE BAWAH */
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
 
-    /* Aktifkan Scroll Samping */
     overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important; /* Biar smooth di iPhone */
+    -webkit-overflow-scrolling: touch !important;
 
-    /* Hilangkan Scrollbar kasar biar rapi */
-    scrollbar-width: none !important; /* Firefox */
-    -ms-overflow-style: none !important; /* IE */
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
 
     gap: 10px !important;
-    padding: 0 20px !important; /* Padding kiri kanan biar gak mepet layar */
+    padding: 0 20px !important;
     margin: 0 !important;
     width: 100% !important;
     align-items: center !important;
   }
 
-  /* Sembunyikan scrollbar di Chrome/Safari */
   .pkp_navigation_primary::-webkit-scrollbar {
     display: none !important;
   }
 
-  /* E. STYLE TOMBOL MENU (PILL SHAPE) */
   .pkp_navigation_primary > li {
-    flex: 0 0 auto !important; /* JANGAN MENGECIL, pertahankan ukuran asli */
+    flex: 0 0 auto !important;
     width: auto !important;
     display: block !important;
   }
 
   .pkp_navigation_primary > li > a {
     display: inline-block !important;
-    white-space: nowrap !important; /* Teks dilarang turun baris */
+    white-space: nowrap !important;
 
     padding: 8px 18px !important;
     font-size: 0.9rem !important;
     font-weight: 600 !important;
 
-    /* Kembalikan Style Pill Biru Mas Ivan */
     background: #eff6ff !important;
     color: #0d6efd !important;
-    border-radius: 50px !important; /* Bulat Pill */
+    border-radius: 50px !important;
     border: 1px solid #dbeafe !important;
     text-transform: capitalize !important;
     transition: all 0.2s !important;
   }
 
-  /* Efek Aktif / Hover di HP */
   .pkp_navigation_primary > li > a:hover,
   .pkp_navigation_primary > li[aria-current="page"] > a {
     background: #0d6efd !important;
@@ -164,9 +137,7 @@ body {
     box-shadow: 0 4px 10px rgba(13, 110, 253, 0.2) !important;
   }
 
-  /* F. FIX HEADER CONTENT BIAR GAK KETUTUP */
   .pkp_head_wrapper {
-    /* Karena menu sekarang nempel statis, kita gak perlu padding aneh-aneh */
     padding-top: 10px !important;
   }
 }

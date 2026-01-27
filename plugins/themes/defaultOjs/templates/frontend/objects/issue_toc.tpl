@@ -29,7 +29,7 @@
 	{* Issue introduction area above articles *}
 	<div class="heading">
 
-		{* 1. COVER IMAGE *}
+		
 		{assign var=issueCover value=$issue->getLocalizedCoverImageUrl()}
 		{if $issueCover}
 			<div class="cover">
@@ -47,7 +47,7 @@
 			</div>
 		{/if}
 
-		{* 3. PUBLISHED DATE (DIPINDAHKAN KE SINI - AGAR NEMPEL DESKRIPSI) *}
+		
 		{if $issue->getDatePublished()}
 			<div class="published">
 				<span class="label">
@@ -59,7 +59,7 @@
 			</div>
 		{/if}
 
-		{* 4. Pub IDs (eg - URN) - SEKARANG DI BAWAH TANGGAL *}
+		
 		{foreach from=$pubIdPlugins item=pubIdPlugin}
 			{assign var=pubId value=$issue->getStoredPubId($pubIdPlugin->getPubIdType())}
 			{if $pubId}
@@ -81,7 +81,7 @@
 			{/if}
 		{/foreach}
 
-		{* 5. DOI - SEKARANG DI BAWAH TANGGAL *}
+		
 		{assign var=doiObject value=$issue->getData('doiObject')}
 		{if $doiObject}
 			{assign var="doiUrl" value=$doiObject->getData('resolvingUrl')|escape}

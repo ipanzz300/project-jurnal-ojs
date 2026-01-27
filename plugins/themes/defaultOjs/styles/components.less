@@ -8,12 +8,10 @@
  * @brief Reusable components
  */
 
-// Simple clearfix wrapper
 .row {
   .pkp_helpers_clear;
 }
 
-// Button
 .cmp_button {
   display: inline-block;
   padding: 0 1em;
@@ -34,7 +32,6 @@
   }
 }
 
-// Wire button
 .cmp_button_wire {
   display: inline-block;
   padding: 0 1em;
@@ -53,7 +50,6 @@
   }
 }
 
-// Add an icon to the button
 .cmp_button_icon( @icon ) {
   position: relative;
   padding-right: @triple + (@triple / 2);
@@ -99,7 +95,6 @@
   }
 }
 
-// Text button with an icon
 .cmp_button_text( @icon ) {
   display: inline-block;
   position: relative;
@@ -459,6 +454,7 @@
   }
 }
 
+// custom css nya
 .content-card,
 .page_about,
 .page_editorial_team,
@@ -472,7 +468,6 @@
   display: block !important;
   visibility: visible !important;
 
-  /* Style Fisik */
   background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
   padding: 40px 50px !important;
   border-radius: 16px !important;
@@ -481,12 +476,11 @@
 
   margin-bottom: 40px !important;
   position: relative !important;
-  overflow: visible !important; /* Visible supaya badge tidak kepotong */
+  overflow: visible !important;
   z-index: 1 !important;
   transition: all 0.3s ease !important;
 }
 
-/* Garis Dekorasi Atas (Biru Gradasi) */
 .content-card::before,
 .page_about::before,
 .page_editorial_team::before,
@@ -505,7 +499,6 @@
   border-radius: 16px 16px 0 0 !important;
 }
 
-/* Efek Hover */
 .content-card:hover,
 .homepage_about:hover,
 .additional_content:hover,
@@ -515,7 +508,6 @@
   border-color: rgba(13, 110, 253, 0.3) !important;
 }
 
-/* Typography Judul di Dalam Kartu */
 .homepage_about h2,
 .additional_content h2,
 .current_issue h2,
@@ -530,7 +522,6 @@
   border-bottom: 2px solid rgba(13, 110, 253, 0.1) !important;
 }
 
-/* Drop Cap (Huruf Pertama Besar) */
 .homepage_about p:first-of-type::first-letter,
 .additional_content p:first-of-type::first-letter {
   font-family: "Merriweather", serif !important;
@@ -543,32 +534,6 @@
   color: #0d6efd !important;
 }
 
-/* --- BADGE LATEST (COMPONENT) --- */
-.badge-new {
-  background-image: linear-gradient(
-    90deg,
-    #ff0000,
-    #ff9a00,
-    #d600ff,
-    #ff0000
-  ) !important;
-  background-size: 300% 100% !important;
-  animation: flowGradient 3s linear infinite !important;
-  color: #ffffff !important;
-  padding: 6px 16px !important;
-  border-radius: 50px !important;
-  border: 2px solid #ffffff !important;
-  font-family: "Inter", sans-serif !important;
-  font-size: 0.75rem !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
-  position: absolute !important;
-  top: 35px !important;
-  right: 40px !important;
-}
-
-/* --- TOMBOL READ MORE --- */
 .read_more {
   display: inline-block !important;
   margin-top: 20px !important;

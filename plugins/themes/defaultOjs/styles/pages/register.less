@@ -1,160 +1,222 @@
-/**
- * @file plugins/themes/default/styles/pages/register.less
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * @brief Styles applying to the registration page
- * @link templates/frontend/pages/userRegister.tpl
- */
 .page_register {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
+  padding: 60px 50px !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
+  border: 1px solid rgba(13, 110, 253, 0.12) !important;
+  max-width: 800px !important;
+  width: 95% !important;
+  margin: 50px auto !important;
+  position: relative !important;
+  overflow: hidden !important;
 
-	.required_label {
-		font-size: @font-sml;
-		line-height: @line-sml;
-		color: @text-light;
-		margin-bottom: @double;
-	}
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #0d6efd, #00d4ff);
+  }
 
-	.consent {
-		margin-bottom: 0;
-	}
+  h1 {
+    text-align: center !important;
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    margin-bottom: 10px !important;
+    width: 100%;
 
-	.fields .reviewer_interests {
-		max-height: 0;
-		padding-bottom: 0;
-		overflow: hidden;
-		opacity: 0;
-		transition: all 0.3s;
+    &::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      margin: 15px auto 30px;
+      background: linear-gradient(90deg, #0d6efd, #00d4ff);
+      border-radius: 10px;
+    }
+  }
 
-		&.is_visible {
-			max-height: 400px;
-			overflow: visible;
-			padding-bottom: @triple;
-			opacity: 1;
-		}
-	}
+  p {
+    text-align: center !important;
+    font-size: 0.9rem !important;
+    color: #ef4444 !important;
+    margin-bottom: 30px !important;
+  }
 
-	.context_optin {
+  .cmp_form.register {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
 
-		.contexts {
-			&:extend(.pkp_unstyled_list);
+  .fields {
+    width: 100% !important;
 
-			> li {
-				margin-bottom: 1em;
+    > div {
+      width: 100% !important;
+      margin-bottom: 20px !important;
+    }
 
-				&:last-child {
-					margin-bottom: 0;
-				}
-			}
-		}
+    label {
+      display: block !important;
+      margin-bottom: 8px !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
 
-		.roles {
-			padding: @half 0;
-			margin-bottom: 0;
+      .label {
+        display: block;
+        margin-bottom: 5px;
+      }
+    }
 
-			legend {
-				&:extend(.pkp_screen_reader);
-			}
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100% !important;
+      padding: 12px 20px !important;
+      border-radius: 12px !important;
+      border: 1px solid #cbd5e1 !important;
+      font-size: 1rem !important;
+      background: #fff !important;
+      transition: all 0.3s ease;
+    }
 
-			label {
-				display: inline-block;
-				margin-right: 1em;
-				font-size: @font-sml;
-				line-height: @line-sml;
-			}
-		}
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: none !important;
+      border-color: #0d6efd !important;
+      box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15) !important;
+    }
+  }
 
-		.context_privacy {
-			position: absolute;
-			left: -9999px;
-			padding: @half 0;
-			font-size: @font-sml;
-			line-height: @line-sml;
-		}
+  fieldset {
+    border: none !important;
+    padding: 20px !important;
+    margin: 20px 0 !important;
+    background: rgba(13, 110, 253, 0.03) !important;
+    border-radius: 15px !important;
+    border: 1px solid rgba(13, 110, 253, 0.08) !important;
 
-		.context_privacy_visible {
-			position: relative;
-			left: auto;
-		}
-	}
+    legend {
+      font-weight: 800 !important;
+      color: #0d6efd !important;
+      margin-bottom: 15px !important;
+      font-size: 1.1rem !important;
+    }
+  }
 
-	// Styles for form error list, which is still tied to a template shared by
-	// the backend
-	#formErrors {
-		margin: @double 0;
-		padding: @base;
-		background: @no;
-		color: #fff;
+  .optin {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
 
-		.pkp_form_error {
-			padding: 0;
-			font-size: @font-sml;
-			font-weight: bold;
-			line-height: @line-sml;
+    label {
+      display: flex !important;
+      align-items: center !important;
+      gap: 10px !important;
+      font-weight: 500 !important;
+      cursor: pointer !important;
+      text-align: left !important;
+    }
 
-		}
+    input[type="checkbox"] {
+      width: 18px !important;
+      height: 18px !important;
+      accent-color: #0d6efd !important;
+    }
+  }
 
-		.pkp_form_error_list {
-			margin: 0;
-			padding-left: @double;
-			font-size: @font-sml;
-			line-height: @line-sml;
+  .reviewer_interests,
+  .reviewer_nocontext_interests {
+    margin-top: 15px !important;
 
-			a {
-				color: #fff;
-			}
-		}
-	}
+    input {
+      text-align: left !important;
+    }
+  }
 
-	@media(min-width: @screen-tablet) {
+  .buttons {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 30px !important;
+    gap: 15px !important;
 
-		.identity li {
-			display: inline-block;
-			padding-right: 1em;
-			max-width: 13em;
-		}
-	}
+    button.submit {
+      width: 100% !important;
+      height: 55px !important;
+      border-radius: 50px !important;
+      background: linear-gradient(135deg, #0d6efd, #0056b3) !important;
+      color: #fff !important;
+      border: none !important;
+      font-weight: 700 !important;
+      font-size: 1.1rem !important;
+      cursor: pointer !important;
+      transition: all 0.3s ease !important;
 
-	@media(min-width: @screen-lg-desktop) {
+      &:hover {
+        transform: translateY(-2px) !important;
+        box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3) !important;
+      }
+    }
 
-		.identity li {
-			max-width: 17em;
-		}
-	}
+    a.login {
+      background: transparent !important;
+      border: 2px solid #e2e8f0 !important;
+      color: #64748b !important;
+      height: 51px !important;
+      line-height: 51px !important;
+      width: 100% !important;
+      text-align: center !important;
+      border-radius: 50px !important;
+      font-weight: 700 !important;
+      display: block !important;
+      text-decoration: none !important;
+      transition: all 0.3s ease !important;
+
+      &:hover {
+        background: #f8fafc !important;
+        color: #1e293b !important;
+        border-color: #cbd5e1 !important;
+      }
+    }
+  }
+
+  #formErrors {
+    width: 100% !important;
+    background: #fee2e2 !important;
+    border: 1px solid #fecaca !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+    margin-bottom: 25px !important;
+
+    .pkp_form_error {
+      color: #b91c1c !important;
+      font-weight: 700 !important;
+      text-align: center !important;
+      list-style: none !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 25px !important;
+    h1 {
+      font-size: 2rem !important;
+    }
+  }
 }
 
 .pkp_op_register {
-
-	.ui-helper-hidden-accessible {
-	    clip: rect(1px, 1px, 1px, 1px);
-	    position: absolute !important;
-	    left: -2000px;
-
-	    &:focus {
-	        background-color: #fff;
-	        border-radius: 3px;
-	        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	        -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	        clip: auto !important;
-	        color: #000;
-	        display: block;
-	        font-size: @font-base;
-	        height: auto;
-	        line-height: normal;
-	        padding: @base;
-	        position: absolute;
-	        left: @half;
-	        top: @half;
-	        text-decoration: none;
-	        width: auto;
-	        z-index: 100000;
-    	}
-    }
-
-	.ui-autocomplete {
-		position: absolute !important;
-	}
+  .ui-autocomplete {
+    position: absolute !important;
+  }
 }
-
