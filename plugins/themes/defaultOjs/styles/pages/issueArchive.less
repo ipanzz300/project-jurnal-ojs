@@ -1,51 +1,70 @@
-.page_issue_archive .cmp_breadcrumbs {
-  margin-bottom: 1.5rem !important;
+.pkp_structure_main {
+  padding-bottom: 0 !important;
+}
+
+.page_issue_archive {
+  background-color: #6dc2fe21 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 85vh !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 60px !important;
+}
+
+body .pkp_structure_page .cmp_breadcrumbs {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 25px !important;
   padding-bottom: 1rem !important;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
   font-size: 0.9rem !important;
   display: block !important;
   text-align: left !important;
-  padding-left: 20px !important;
+  padding-left: 70px !important;
+  padding-right: 60px !important;
   width: 100% !important;
+  box-sizing: border-box !important;
+  background-color: transparent !important;
 }
 
-body .pkp_structure_main .page_issue_archive h1 {
-  font-family: "Merriweather", serif !important;
-  font-size: 20px !important;
-  font-weight: 700 !important;
-  color: #0f172a !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  margin-top: 30px !important;
-  margin-bottom: 40px !important;
+body.pkp_page_issue.pkp_op_archive .pkp_structure_page .page_issue_archive h1 {
   text-align: left !important;
   display: block !important;
   width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding-top: 30px !important;
+  padding-bottom: 10px !important;
+  padding-left: 60px !important;
+  font-family: "Merriweather", serif !important;
+  font-size: 40px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
   border: none !important;
+  background-color: transparent !important;
 }
 
-body .pkp_structure_main .page_issue_archive h1::after {
-  content: none !important;
-  display: none !important;
-}
-
-.page_issue_archive h1::after {
+body.pkp_page_issue.pkp_op_archive
+  .pkp_structure_page
+  .page_issue_archive
+  h1::after {
   content: "" !important;
   display: block !important;
   width: 70px !important;
-  height: 6px !important;
+  height: 5px !important;
   margin-top: 12px !important;
-  border-radius: 20px !important;
-  margin-left: 20px !important;
+  border-radius: 10px !important;
+  margin-left: 60px !important;
 }
 
 .issues_archive {
   display: grid !important;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
   gap: 40px !important;
-  padding: 20px !important;
+  padding: 20px 25px !important;
   margin: 0 !important;
   list-style: none !important;
+  background-color: transparent !important;
 }
 
 .issues_archive li .obj_issue_summary {
@@ -53,50 +72,68 @@ body .pkp_structure_main .page_issue_archive h1::after {
   display: flex !important;
   flex-direction: column !important;
   height: 100% !important;
-  min-height: 400px !important;
-
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.4)
-  ) !important;
-  backdrop-filter: blur(10px) !important;
-  -webkit-backdrop-filter: blur(10px) !important;
-  border: 1px solid rgba(255, 255, 255, 0.8) !important;
-  border-right: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
-
+  min-height: 350px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
   border-radius: 15px !important;
-  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1) !important;
-
-  transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05) !important;
   overflow: hidden !important;
+  transition: all 0.5s ease !important;
   z-index: 1 !important;
 }
 
-.issues_archive li:nth-child(odd) .obj_issue_summary {
-  transform: rotate(-3deg) translateY(0) !important;
+.issues_archive li .obj_issue_summary::before,
+.issues_archive li .obj_issue_summary::after {
+  position: absolute !important;
+  content: "" !important;
+  width: 20% !important;
+  height: 20% !important;
+  background-color: #0d6dfd8b !important;
+  transition: all 0.5s ease !important;
+  z-index: -1 !important;
 }
 
-.issues_archive li:nth-child(even) .obj_issue_summary {
-  transform: rotate(3deg) translateY(0) !important;
+.issues_archive li .obj_issue_summary::before {
+  top: 0 !important;
+  right: 0 !important;
+  border-radius: 0 15px 0 100% !important;
 }
 
-.issues_archive li:nth-child(3n) .obj_issue_summary {
-  transform: rotate(-1.5deg) translateY(5px) !important;
+.issues_archive li .obj_issue_summary::after {
+  bottom: 0 !important;
+  left: 0 !important;
+  border-radius: 0 100% 0 15px !important;
+}
+
+.issues_archive li:hover .obj_issue_summary::before,
+.issues_archive li:hover .obj_issue_summary::after {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 15px !important;
+  opacity: 1 !important;
 }
 
 .issues_archive li:hover .obj_issue_summary {
-  transform: rotate(0deg) scale(1.05) !important;
-  z-index: 10 !important;
-  background: rgba(255, 255, 255, 1) !important;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2) !important;
-  border: 1px solid rgba(255, 255, 255, 1) !important;
+  border-color: #0d6dfde1 !important;
+  box-shadow: 0 20px 40px rgba(13, 110, 253, 0.3) !important;
+  transform: translateY(-5px) !important;
+}
+
+.issues_archive li:nth-child(odd) .obj_issue_summary {
+  transform: rotate(-1deg) translateY(0) !important;
+}
+
+.issues_archive li:nth-child(even) .obj_issue_summary {
+  transform: rotate(1deg) translateY(0) !important;
+}
+
+.issues_archive li:hover .obj_issue_summary {
+  transform: rotate(0deg) translateY(-8px) scale(1.02) !important;
 }
 
 .issues_archive .cover {
   width: 100% !important;
-  height: 250px !important;
+  height: 190px !important;
   margin-bottom: 20px !important;
   display: flex !important;
   justify-content: center !important;
@@ -106,6 +143,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   padding: 0 !important;
   overflow: hidden !important;
   border-radius: 12px !important;
+  z-index: 2 !important;
 }
 
 .issues_archive .cover img {
@@ -128,6 +166,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   text-align: center !important;
   margin: 0 15px 10px 15px !important;
   color: #1e293b !important;
+  transition: color 0.3s ease !important;
 }
 
 .issues_archive h2 a {
@@ -145,6 +184,17 @@ body .pkp_structure_main .page_issue_archive h1::after {
   -webkit-line-clamp: 3 !important;
   -webkit-box-orient: vertical !important;
   overflow: hidden !important;
+  transition: color 0.3s ease !important;
+}
+
+.issues_archive li:hover h2,
+.issues_archive li:hover .series,
+.issues_archive li:hover h2 a {
+  color: #ffffff !important;
+}
+
+.issues_archive li:hover .description {
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .issues_archive .published {
@@ -165,6 +215,7 @@ body .pkp_structure_main .page_issue_archive h1::after {
   font-size: 0.9rem !important;
   text-transform: uppercase !important;
   transition: all 0.3s ease !important;
+  z-index: 5 !important;
 }
 
 .issues_archive .published::before {
@@ -174,54 +225,50 @@ body .pkp_structure_main .page_issue_archive h1::after {
 }
 
 .issues_archive li:hover .published {
-  background: #0b5ed7 !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.3) !important;
   height: 60px !important;
 }
 
 .cmp_pagination {
-  margin-top: 40px !important;
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 20px 0 60px 0 !important;
   display: flex !important;
   justify-content: center !important;
   gap: 10px !important;
 }
+
 .cmp_pagination .href,
 .cmp_pagination .current {
   padding: 8px 16px !important;
   border-radius: 6px !important;
   font-weight: 600 !important;
 }
+
 .cmp_pagination .href {
   background: #fff;
   border: 1px solid #e2e8f0;
   color: #0d6efd;
   text-decoration: none;
 }
+
 .cmp_pagination .current {
   background: #0d6efd;
   color: #fff;
 }
 
 @media (max-width: 768px) {
+  body .pkp_structure_page .cmp_breadcrumbs {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
   .page_issue_archive h1 {
     text-align: center !important;
+    padding-left: 20px !important;
   }
   .page_issue_archive h1::after {
-    margin: 12px auto 0 auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
-}
-
-.obj_issue_toc .current_issue_details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.obj_issue_toc .description {
-  margin-bottom: 5px;
-}
-
-.obj_issue_toc .published {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-  display: inline-block;
 }

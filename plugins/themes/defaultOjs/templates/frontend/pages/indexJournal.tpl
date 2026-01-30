@@ -3,22 +3,19 @@
 <div class="page_index_journal">
     {call_hook name="Templates::Index::journal"}
 
-  
+    {* === HERO BANNER === *}
     <section class="custom-hero-banner ojs-hero-wrapper">
         <div class="container">
             <div class="hero-inner">
 
-                
                 <span class="hero-subtitle ojs-hero-subtitle">
                     Open Access Journal
                 </span>
 
-                
                 <h1 class="hero-title ojs-hero-title">
                     {$currentJournal->getLocalizedName()|escape}
                 </h1>
 
-                
                 {* strip_tags = Menghapus format bold/enter dari editor admin biar teksnya rapi *}
                 <div class="hero-tagline ojs-hero-tagline">
                     {$currentJournal->getLocalizedDescription()|strip_tags}
@@ -44,8 +41,6 @@
             {* Bagian Kiri: HANYA CURRENT ISSUE *}
             <main class="col-lg-8 col-md-12 ojs-main-content">
 
-                
-
                 {if $issue}
                 <section class="current_issue content-card ojs-issue-card" id="homepageIssue">
                     <div class="card-header-custom">
@@ -65,6 +60,23 @@
                     <div class="toc-wrapper">
                         {include file="frontend/objects/issue_toc.tpl" heading="h3"}
                     </div>
+
+                    {* === TOMBOL READ MORE (MASKING VERSION) === *}
+<div class="card-footer-custom">
+    <a href="{url page="issue" op="view" path=$issue->getBestIssueId()}" class="learn-more">
+        
+        {* LAYER 1: Lingkaran Biru + Panah + Teks Putih (Masking) *}
+        <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            <span class="button-text white">Read Full Issue</span>
+        </span>
+        
+        
+        <span class="button-text blue">Read Full Issue</span>
+        
+    </a>
+</div>
+
                 </section>
                 {/if}
 

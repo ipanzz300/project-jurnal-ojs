@@ -1,40 +1,214 @@
-/**
- * @file  plugins/themes/default/styles/objects/announcement_full.less
- *
- * Copyright (c) 2014-2021 Simon Fraser University
- * Copyright (c) 2003-2021 John Willinsky
- * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
- *
- * @brief Styles applying to the full view of an announcement
- * @link templates/frontend/objects/announcement_full.tpl
- */
-.obj_announcement_full {
+/* =========================================================
+   STYLING HALAMAN PENGUMUMAN (STYLE ALA PAGE ABOUT)
+   ========================================================= */
 
-	h1 {
-		margin: 0;
-	}
+/* 1. KARTU PEMBUNGKUS UTAMA (Halaman) */
+.pkp_page_announcements,
+.page_announcements {
+  display: block !important;
+  visibility: visible !important;
 
-	.date {
-		margin: 16px 0;
-		color: @text-light;
+  /* Background & Bayangan (Mirip About) */
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%) !important;
+  padding: 60px 70px !important;
+  border-radius: 20px !important; /* Sudut melengkung */
+  box-shadow: 0 10px 50px rgba(13, 110, 253, 0.08) !important;
+  border: 1px solid rgba(13, 110, 253, 0.12) !important;
 
-		&:before {
-			.fa();
-			content: @fa-var-calendar;
-			margin-right: 0.5em;
-			color: @bg-shade;
-		}
-	}
+  max-width: 1000px !important;
+  width: 90% !important;
+  margin: 40px auto !important;
 
-	.description {
-		margin-top: @quadruple;
+  /* PENTING: Supaya garis kiri tidak bocor keluar sudut */
+  position: relative !important;
+  overflow: hidden !important;
 
-		p:first-child {
-			margin-top: 0;
-		}
+  /* Animasi Smooth (Sama seperti About) */
+  transition: all 0.4s ease !important;
+  animation: fadeInContent 0.6s ease-out !important;
 
-		p:last-child {
-			margin-bottom: 0;
-		}
-	}
+  /* Efek Hover di Kartu Utama */
+  &:hover {
+    box-shadow: 0 15px 60px rgba(13, 110, 253, 0.12) !important;
+    transform: translateY(-3px) !important;
+  }
+
+  /* --- GARIS RGB DI KIRI (Fixed: Tidak akan keluar tepi) --- */
+  &::before {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 6px !important; /* Lebar garis */
+    height: 100% !important;
+    background: linear-gradient(180deg, #0d6efd, #00d4ff, #0d6efd) !important;
+    background-size: 100% 200% !important;
+    animation: flowVertical 3s ease-in-out infinite !important;
+    z-index: 10 !important;
+  }
+
+  /* --- HIASAN BULAT DI POJOK KANAN ATAS (Sama seperti About) --- */
+  &::after {
+    content: "" !important;
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+    width: 150px !important;
+    height: 150px !important;
+    background: radial-gradient(
+      circle at top right,
+      rgba(13, 110, 253, 0.05) 0%,
+      transparent 70%
+    ) !important;
+    pointer-events: none !important;
+  }
+
+  /* Judul Halaman "Announcements" */
+  h1 {
+    font-family: "Merriweather", serif !important;
+    font-size: 2.5rem !important;
+    font-weight: 900 !important;
+    color: #0f172a !important;
+    margin-left: 15px !important; /* Geser dikit biar ga nempel garis kiri */
+    margin-bottom: 35px !important;
+    padding-bottom: 20px !important;
+    position: relative !important;
+    border-bottom: 2px solid #e2e8f0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+
+    /* Garis kecil di bawah judul */
+    &::after {
+      content: "" !important;
+      display: block !important;
+      width: 120px !important;
+      height: 4px !important;
+      position: absolute;
+      bottom: -2px !important;
+      left: 0 !important;
+      border-radius: 10px !important;
+      animation: expandWidth 1s ease-out !important;
+    }
+  }
+}
+
+/* 2. STYLING ITEM PENGUMUMAN (LIST DI DALAMNYA) */
+.obj_announcement_summary {
+  position: relative !important;
+  margin-bottom: 20px !important;
+  padding: 25px 30px !important; /* Padding enak dilihat */
+
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+
+  /* Transisi Halus */
+  transition: all 0.3s ease !important;
+
+  /* Efek Hover per Item */
+  &:hover {
+    transform: translateX(5px) !important; /* Geser kanan dikit */
+    border-color: #0d6efd !important; /* Border jadi biru */
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.08) !important;
+  }
+
+  &:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  /* Judul Per Item */
+  h2,
+  h3 {
+    font-family: "Merriweather", serif !important;
+    font-size: 1.4rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+
+    a {
+      color: #1e293b !important;
+      text-decoration: none !important;
+      font-weight: 800 !important;
+      transition: color 0.2s !important;
+
+      &:hover {
+        color: #0d6efd !important;
+      }
+    }
+  }
+
+  /* Tanggal Posting */
+  .date {
+    display: inline-block !important;
+    font-family: "Inter", sans-serif !important;
+    font-size: 0.85rem !important;
+    font-weight: 600 !important;
+    color: #0d6efd !important;
+    background: #eff6ff !important;
+    padding: 5px 12px !important;
+    border-radius: 50px !important;
+    margin-bottom: 15px !important;
+    border: 1px solid #dbeafe !important;
+  }
+
+  /* Isi Ringkasan */
+  .summary {
+    font-family: "Inter", sans-serif !important;
+    font-size: 1rem !important;
+    line-height: 1.8 !important;
+    color: #475569 !important;
+    text-align: justify !important;
+
+    p {
+      margin-bottom: 10px !important;
+    }
+  }
+}
+
+/* --- ANIMASI --- */
+@keyframes flowVertical {
+  0%,
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIF (HP) --- */
+@media (max-width: 768px) {
+  .pkp_page_announcements,
+  .page_announcements {
+    padding: 35px 25px !important;
+    width: 95% !important;
+    border-radius: 15px !important;
+  }
+
+  .page_announcements h1 {
+    font-size: 2rem !important;
+    margin-left: 10px !important;
+  }
 }

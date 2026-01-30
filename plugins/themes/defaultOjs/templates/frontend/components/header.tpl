@@ -54,20 +54,22 @@
         {* === [FIX] BAGIAN INISIAL OTOMATIS === *}
         <div class="journal-icon-box">
             {if $currentContext}
-                {* 1. Coba ambil Akronim/Singkatan dari Setting Jurnal (Contoh: JIT) *}
-                {assign var="acronym" value=$currentContext->getLocalizedAcronym()}
+                {* Ambil Variable Nama dan Akronim *}
+                {assign var="journalName" value=$currentContext->getLocalizedName()}
+                {assign var="journalAcronym" value=$currentContext->getLocalizedAcronym()}
                 
-                {* 2. Jika Akronim ada, tampilkan. Jika tidak, ambil 2 huruf pertama nama jurnal *}
-                {if $acronym}
-                    {$acronym|escape}
+                {* LOGIKA: Prioritas Akronim -> Jika kosong, ambil huruf depan *}
+                {if $journalAcronym}
+                    {$journalAcronym|escape}
                 {else}
-                    {$currentContext->getLocalizedName()|substr:0:2|upper}
+                    {* Fallback: Ambil Huruf Pertama dari Kata Pertama & Kedua (Misal: Jurnal Teknologi -> JT) *}
+                    {$journalName|regex_replace:"/(\b\w)\w+\s?/":"$1"|replace:" ":""|truncate:2:""|upper|escape}
                 {/if}
             {else}
-                JT {* Fallback jika bukan halaman jurnal *}
+                {* Default jika bukan halaman jurnal *}
+                OJS
             {/if}
         </div>
-        {* === END BAGIAN INISIAL OTOMATIS === *}
 
         <div class="journal-details">
             {if $displayPageHeaderTitle}

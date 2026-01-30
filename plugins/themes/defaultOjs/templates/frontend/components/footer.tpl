@@ -1,12 +1,10 @@
 {**
  * templates/frontend/components/footer.tpl
  *
- * Custom Footer Layout - Dynamic Data from OJS Settings
  *}
 
 	</div>
 
-	
 	{if empty($isFullWidth)}
 		{capture assign="sidebarCode"}{call_hook name="Templates::Common::Sidebar"}{/capture}
 		{if $sidebarCode}
@@ -21,12 +19,20 @@
 
 <div class="custom-footer-wrapper" role="contentinfo">
     <div class="custom-footer-container">
-        
+
+        <div class="footer_brand_top">
+            <a href="{url page="about" op="aboutThisPublishingSystem"}" target="_blank">
+                <img alt="Platform & workflow by OJS / PKP" 
+                     src="{$baseUrl}/templates/images/ojs_brand_white.png" 
+                     style="max-width: 150px; opacity: 1; filter: brightness(0) invert(1);">
+            </a>
+        </div>
+
+        {* Baris Kolom Informasi *}
         <div class="footer-top-row">
             
-            
+            {* KOLOM 1: Branding Jurnal *}
             <div class="footer-col branding-col">
-                {* LOGIKA OTOMATIS INISIAL JURNAL *}
                 <div class="journal-icon-box" style="margin-bottom: 20px;">
                     {if $currentContext}
                         {assign var="acronym" value=$currentContext->getLocalizedAcronym()}
@@ -42,7 +48,6 @@
 
                 <p class="footer-desc">
                     {if $currentContext}
-                        {* Mengambil Summary Jurnal, dibersihkan HTML-nya, dipotong max 150 huruf *}
                         {$currentContext->getLocalizedDescription()|strip_tags|truncate:150:"..."}
                     {else}
                         Open Access Journal System managed by Universitas Teknologi Indonesia.
@@ -50,7 +55,7 @@
                 </p>
             </div>
 
-            
+            {* KOLOM 2: Informasi *}
             <div class="footer-col">
                 <h3 class="footer-heading">{translate key="plugins.block.information.link"}</h3>
                 <ul class="footer-links">
@@ -60,7 +65,7 @@
                 </ul>
             </div>
 
-            
+            {* KOLOM 3: Quick Links *}
             <div class="footer-col">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-links">
@@ -71,11 +76,10 @@
                 </ul>
             </div>
 
-            
+            {* KOLOM 4: Kontak *}
             <div class="footer-col contact-col">
                 <h3 class="footer-heading">{translate key="about.contact"}</h3>
                 <div class="contact-info">
-                    
                     
                     {if $currentContext && $currentContext->getData('mailingAddress')}
                     <p>
@@ -84,7 +88,6 @@
                     </p>
                     {/if}
 
-                    {* EMAIL DINAMIS *}
                     {if $currentContext && $currentContext->getData('contactEmail')}
                     <p>
                         <strong>Email:</strong><br>
@@ -94,7 +97,6 @@
                     </p>
                     {/if}
 
-                    {* PENERBIT (OPSIONAL) *}
                     {if $currentContext && $currentContext->getData('publisherInstitution')}
                     <p>
                         <strong>Publisher:</strong><br>
@@ -107,14 +109,14 @@
 
         </div>
 
-        {* COPYRIGHT DINAMIS *}
+        {* Copyright *}
         <div class="footer-bottom-row">
             <p>
                 &copy; {$smarty.now|date_format:"Y"} 
                 {if $currentContext}
-                    {$currentContext->getLocalizedName()|escape}.
-                {/if} 
-                Powered by Open Journal Systems.
+                    <strong>{$currentContext->getLocalizedName()|escape}</strong>
+                {/if}
+                . All Rights Reserved.
             </p>
         </div>
 

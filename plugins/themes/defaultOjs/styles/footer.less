@@ -6,13 +6,13 @@
     rgba(4, 62, 155, 0.785) 100%
   ) !important;
   color: #e2e8f0 !important;
-  padding: 60px 0 30px 0 !important;
+  padding: 30px 0 15px 0 !important;
   width: 100% !important;
   display: block !important;
   position: relative !important;
   z-index: 100 !important;
   border-top: 5px solid #01b3ff !important;
-  margin-top: 50px !important;
+  margin-top: 0 !important;
 }
 
 .custom-footer-container {
@@ -21,20 +21,36 @@
   padding: 0 20px !important;
 }
 
+.custom-footer-wrapper .footer_brand_top {
+  text-align: center !important;
+  margin-bottom: 25px !important;
+  padding-bottom: 15px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+
+  img {
+    transition: transform 0.3s ease;
+    max-width: 130px !important;
+  }
+
+  &:hover img {
+    transform: scale(1.1);
+  }
+}
+
 .footer-top-row {
   display: grid !important;
   grid-template-columns: 1.4fr 1fr 1fr 1fr !important;
   align-items: start !important;
-  gap: 30px !important;
+  gap: 20px !important;
   width: 100% !important;
 }
 
 .footer-heading {
   font-family: "Inter", serif !important;
-  font-size: 18px !important;
+  font-size: 16px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
-  margin-bottom: 25px !important;
+  margin-bottom: 15px !important;
 }
 
 .footer-links {
@@ -42,25 +58,28 @@
   padding: 0 !important;
   margin: 0 !important;
 }
+
 .footer-links a {
   color: #cbd5e1 !important;
   text-decoration: none !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   transition: all 0.3s ease !important;
   display: inline-block !important;
+  margin-bottom: 5px !important;
 }
+
 .footer-links a:hover {
   color: #a3bbe8 !important;
   transform: translateX(5px) !important;
 }
 
 .footer-bottom-row {
-  margin-top: 50px !important;
-  padding-top: 25px !important;
+  margin-top: 25px !important;
+  padding-top: 15px !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   color: #ffffffa2 !important;
-  transform: translateY(-20px);
+  transform: none !important;
 }
 
 .custom-footer-wrapper a[href^="mailto:"] {
@@ -68,6 +87,7 @@
   font-weight: 700 !important;
   text-decoration: none !important;
 }
+
 .custom-footer-wrapper a[href^="mailto:"]:hover {
   color: #625f6c !important;
   text-decoration: underline !important;
@@ -77,5 +97,6 @@
   .footer-top-row {
     display: flex !important;
     flex-direction: column !important;
+    gap: 30px !important;
   }
 }

@@ -1,8 +1,6 @@
 @nav-menu-height: 60px;
 
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
-
 
 .pkp_head_wrapper ul,
 .pkp_head_wrapper li,
@@ -20,7 +18,6 @@ li {
   padding-left: 0 !important;
   margin-left: 0 !important;
 }
-
 
 body .top-simple-bar {
   background-image: linear-gradient(
@@ -113,13 +110,12 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
   color: #0d6efd !important;
 }
 
-
 // header dan branding
 .pkp_head_wrapper {
   background: #ffffff !important;
-  padding: 15px 0 !important;
+  padding: 13px 0 !important; /* Dikecilin dari 15px ke 5px */
   border-bottom: none !important;
-  margin-top: 20px !important;
+  margin-top: 0 !important; /* Dihapus jarak atasnya (dari 20px jadi 0) */
 }
 
 .branding-wrapper {
@@ -131,25 +127,29 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
   padding: 0 20px !important;
 }
 
+/* Kecilkan Kotak Logo */
 .journal-icon-box {
+  width: 45px !important; /* Dikecilin dari 65px */
+  height: 45px !important; /* Dikecilin dari 65px */
+  font-size: 20px !important; /* Font inisial juga dikecilin */
+  border-radius: 6px !important;
+  /* ... sisa kode warna biarkan sama ... */
   background-color: #0088cc;
   color: #ffffff;
-  width: 65px;
-  height: 65px;
-  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Merriweather", serif !important;
-  font-size: 28px;
   font-weight: 700;
   box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);
 }
 
+/* Kecilkan Font Judul Jurnal */
 .custom-journal-title {
+  font-size: 24px !important; /* Dikecilin dari 34px */
+  /* ... sisa kode sama ... */
   font-family: "Merriweather", serif !important;
   font-weight: 900 !important;
-  font-size: 34px !important;
   color: #0f172a !important;
   text-decoration: none !important;
   line-height: 1.2 !important;
@@ -161,15 +161,17 @@ body .top-simple-bar .pkp_navigation_user > li > ul > li > a:hover {
   color: #64748b !important;
 }
 
-
 // navbar menu utama
 .pkp_site_nav_menu {
-  background: #ffffff !important;
-  margin-top: 15px !important;
-  border-bottom: 1px solid #f1f5f9 !important;
+  background: transparent !important;
+  margin-top: 0 !important;
+  margin-left: 10px !important;
+  margin-right: 45px !important;
+  border-bottom: none !important;
+  padding-bottom: 0 !important;
   position: relative !important;
   z-index: 100 !important;
-  transform: translateY(30px) !important;
+  transform: translateY(10px) !important;
 }
 
 .pkp_navigation_primary_wrapper {
@@ -195,15 +197,15 @@ ul.pkp_navigation_primary > li {
   padding-bottom: 0 !important;
 }
 
-
 ul.pkp_navigation_primary > li > a {
+  padding: 8px 15px !important; /* Dikecilin dari 10px 18px */
+  font-size: 0.8rem !important; /* Font dikit lebih kecil */
+  /* ... sisa kode sama ... */
   display: flex !important;
   align-items: center !important;
   gap: 6px !important;
-  padding: 10px 18px !important;
   font-family: "Inter", sans-serif !important;
-  font-weight: 00 !important;
-  font-size: 0.95rem !important;
+  font-weight: 500 !important;
   color: #334155 !important;
   text-decoration: none !important;
   border-radius: 50px !important;
@@ -216,7 +218,6 @@ ul.pkp_navigation_primary > li:hover > a {
   box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1) !important;
   transform: translateY(-1px) !important;
 }
-
 
 ul.pkp_navigation_primary > li[aria-haspopup="true"] > a::after,
 ul.pkp_navigation_primary > li:has(ul) > a::after {
@@ -233,12 +234,10 @@ ul.pkp_navigation_primary > li:has(ul) > a::after {
     border-top-color 0.3s ease !important;
 }
 
-
 ul.pkp_navigation_primary > li:hover > a::after {
   transform: rotate(180deg) !important;
   border-top-color: #0d6efd !important;
 }
-
 
 ul.pkp_navigation_primary > li > ul {
   display: none !important;
@@ -256,7 +255,6 @@ ul.pkp_navigation_primary > li > ul {
   padding: 10px 0 !important;
   animation: slideUpFade 0.3s ease-out !important;
 }
-
 
 ul.pkp_navigation_primary > li > ul::before {
   content: "" !important;
@@ -301,7 +299,6 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
   }
 }
 
-
 // bagian search
 .pkp_navigation_search_wrapper a,
 .pkp_search {
@@ -314,7 +311,7 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
   border-radius: 15px !important;
   padding: 2px 10px !important;
   margin-bottom: 5px !important;
-  font-size: 15px !important;
+  font-size: 13px !important;
   position: relative !important;
   display: inline-flex !important;
   align-items: center !important;
@@ -330,14 +327,14 @@ ul.pkp_navigation_primary > li > ul > li > a:hover {
   transform: translateY(-3px) !important;
 }
 
-
 // hero banner
 .custom-hero-banner {
+  min-height: 400px !important; /* Kurangi tingginya (tadinya 480px) */
+  padding: 60px 0 !important; /* Kurangi padding atas-bawah (tadinya 90px) */
+  /* ... sisa kode background dll biarkan ... */
   position: relative !important;
-  min-height: 480px !important;
   display: flex !important;
   align-items: center !important;
-  padding: 90px 0 !important;
   margin-bottom: 3rem !important;
   overflow: hidden !important;
   background-color: #03192d !important;

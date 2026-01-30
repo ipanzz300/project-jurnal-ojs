@@ -1,3 +1,25 @@
+/* 1. Mengatur jarak antar blok form (Jarak Email ke Password) */
+.page_login .fields > div {
+  width: 100% !important;
+  margin-bottom: 10px !important; /* SEBELUMNYA 25px (Diperkecil biar rapet) */
+}
+
+/* 2. Mengatur jarak judul (Label) ke kotak input */
+.page_login label {
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 5px !important; /* SEBELUMNYA 10px */
+  font-weight: 700 !important;
+}
+
+/* 3. Mengatur jarak link "Forgot Password" biar ga kejauhan dari input password */
+.page_login .password a {
+  display: block !important;
+  text-align: center !important;
+  margin-top: 5px !important; /* SEBELUMNYA 10px */
+  font-weight: 600 !important;
+}
+
 .page_login {
   display: flex !important;
   flex-direction: column !important;
@@ -48,16 +70,6 @@
 .page_login .fields {
   width: 100% !important;
 }
-.page_login .fields > div {
-  width: 100% !important;
-  margin-bottom: 25px !important;
-}
-.page_login label {
-  display: block !important;
-  text-align: center !important;
-  margin-bottom: 10px !important;
-  font-weight: 700 !important;
-}
 
 .page_login input[type="text"],
 .page_login input[type="password"] {
@@ -74,12 +86,6 @@
   box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.15) !important;
 }
 
-.page_login .password a {
-  display: block !important;
-  text-align: center !important;
-  margin-top: 10px !important;
-  font-weight: 600 !important;
-}
 .page_login .remember {
   width: 100% !important;
   display: flex !important;
@@ -100,27 +106,66 @@
   flex-direction: column !important;
   align-items: center !important;
 }
+/* --- PERBAIKAN TOMBOL LOGIN --- */
 .page_login button.submit {
   width: 100% !important;
-  height: 55px !important;
+  height: 55px !important; /* Tinggi Tetap */
   margin-bottom: 15px !important;
   border-radius: 50px !important;
   background: linear-gradient(135deg, #0d6efd, #0056b3) !important;
   color: #fff !important;
   border: none !important;
   font-weight: 700 !important;
-  text-align: center !important;
+  font-size: 1rem !important; /* Pastikan ukuran font sama */
+  cursor: pointer !important;
+  box-shadow: 0 5px 15px rgba(13, 110, 253, 0.2) !important;
+  transition: all 0.3s ease !important;
+
+  /* TEKNIK CENTERING BARU (FLEXBOX) */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important; /* Reset padding biar teks benar-benar di tengah */
 }
+
+/* --- PERBAIKAN TOMBOL REGISTER --- */
 .page_login a.register {
+  width: 100% !important;
+  height: 55px !important; /* Samakan tinggi dengan tombol Login */
   background: transparent !important;
   border: 2px solid #e2e8f0 !important;
   color: #64748b !important;
-  line-height: 51px !important;
-  width: 100% !important;
-  text-align: center !important;
   border-radius: 50px !important;
   font-weight: 700 !important;
-  display: block !important;
+  font-size: 1rem !important; /* Samakan ukuran font */
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+
+  /* KUNCI SUPAYA LEBARNYA SAMA (Mencegah border bikin tombol melar) */
+  box-sizing: border-box !important;
+
+  /* TEKNIK CENTERING BARU (FLEXBOX) - Hapus line-height lama */
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  line-height: normal !important;
+}
+
+/* Tambahan Efek Hover Register biar makin rapi */
+.page_login a.register:hover {
+  border-color: #0d6efd !important;
+  color: #0d6efd !important;
+  background-color: #f8fbff !important;
+}
+
+.page_login button.submit:hover {
+  opacity: 0.85 !important;
+  cursor: pointer !important;
+}
+.page_login a.register:hover {
+  border-color: #0d6efd !important;
+  color: #0d6efd !important;
+  background-color: #f8fbff !important;
 }
 .page_login .pkp_form_error {
   width: 100% !important;

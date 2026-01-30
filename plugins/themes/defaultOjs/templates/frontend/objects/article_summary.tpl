@@ -6,7 +6,7 @@
  * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
  *
  * @brief Tampilan ringkasan Artikel di dalam daftar artikel (List).
- * UPDATE: Statistik Download dipindah ke sebelah tombol PDF (Per Galley)
+ * REVISI: Halaman, Views, dan Total Download sejajar di atas tombol PDF.
  *}
 {assign var=publication value=$article->getCurrentPublication()}
 {assign var=articlePath value=$publication->getData('urlPath')|default:$article->getId()}
@@ -59,29 +59,41 @@
 		</div>
 	{/if}
 
+	{* ================================================================== *}
+	{* 4. BARIS INFORMASI (Halaman, Views, Download) *}
+	
+	{* Hitung total download *}
+	{assign var=totalDownloads value=0}
+	{foreach from=$article->getGalleys() item=galley}
+		{assign var=totalDownloads value=$totalDownloads+$galley->getViews()}
+	{/foreach}
 
-	<div class="meta-row" style="display: flex; align-items: center; gap: 15px; margin-top: 10px; margin-bottom: 15px; font-size: 0.85rem; color: #64748b;">
+	<div class="info-tambahan">
 		
 		{* A. Halaman (Pages) *}
 		{if $publication->getData('pages')}
-			<div class="pages" style="display: flex; align-items: center; gap: 5px;">
+			<div class="item-info pages">
 				<span class="fa fa-file-text-o"></span>
 				<span>Hal. {$publication->getData('pages')|escape}</span>
 			</div>
 		{/if}
 
-		{* B. Statistik VIEWS (Dilihat) *}
-		<div class="stats-views" style="display: flex; align-items: center; gap: 5px;">
+		{* B. Statistik VIEWS *}
+		<div class="item-info stats-views">
 			<span class="fa fa-eye"></span>
 			<span>{$article->getViews()|default:0} Views</span>
 		</div>
 
-		{* C. Statistik DOWNLOADS dihapus dari sini sesuai instruksi, dipindah ke tombol PDF *}
+		{* C. Statistik DOWNLOADS (Total) *}
+		<div class="item-info stats-downloads">
+			<span class="fa fa-download"></span>
+			<span>{$totalDownloads|default:0} Downloads</span>
+		</div>
 
 	</div>
 	{* ================================================================== *}
 
-	{* 5. TOMBOL PDF/GALLEY + STATISTIK DOWNLOAD *}
+	{* 5. TOMBOL PDF/GALLEY *}
 	{if !$hideGalleys}
 		<ul class="galleys_links">
 			{foreach from=$article->getGalleys() item=galley}
@@ -101,12 +113,6 @@
 					{* Load Tombol PDF *}
 					{include file="frontend/objects/galley_link.tpl" parent=$article publication=$publication id=$id labelledBy="{$id} article-{$article->getId()}" hasAccess=$hasArticleAccess purchaseFee=$currentJournal->getData('purchaseArticleFee') purchaseCurrency=$currentJournal->getData('currency')}
 					
-					{* --- UPDATE: TAMPILAN DOWNLOAD PER FILE --- *}
-					<span class="galley-views" style="font-size: 0.75rem; color: #666; margin-left: 5px;">
-						<span class="fa fa-download"></span> {$galley->getViews()|default:0}
-					</span>
-					
-
 				</li>
 			{/foreach}
 		</ul>
